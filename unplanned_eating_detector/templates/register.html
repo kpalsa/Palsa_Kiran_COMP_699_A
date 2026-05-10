@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card" style="max-width: 400px; margin: auto;">
+
+    <h2 style="text-align:center;">Create Account</h2>
+
+    <p style="text-align:center; font-size:14px; color:gray;">
+        Register to track your eating habits and receive smart alerts
+    </p>
+
+    <form method="POST" action="/register">
+
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Enter your email" required>
+
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Create a password" required>
+
+        <button type="submit" class="btn" style="width:100%;">
+            Register
+        </button>
+
+    </form>
+
+    <p style="text-align:center; margin-top:15px; font-size:14px;">
+        Already have an account? <a href="/login">Login here</a>
+    </p>
+
+</div>
+
+{% endblock %}

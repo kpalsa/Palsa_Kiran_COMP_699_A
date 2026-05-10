@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unplanned Eating Pattern Detector</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="main-header">
+    <h1>Unplanned Eating Pattern Detector</h1>
+    <p class="tagline">
+        Understand your eating habits and improve daily decisions
+    </p>
+</header>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+
+    {% if session.get("role") == "user" %}
+        <a href="/dashboard">🏠 Dashboard</a>
+        <a href="/add_food">➕ Add Food</a>
+        <a href="/history">📊 History</a>
+        <a href="/risk">⚠ Risk</a>
+        <a href="/toggle_alert">🔔 Alerts</a>
+        <a href="/logout">🚪 Logout</a>
+
+    {% elif session.get("role") == "admin" %}
+        <a href="/admin/dashboard">📊 Admin Panel</a>
+        <a href="/logout">🚪 Logout</a>
+    {% endif %}
+
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>PalsaTech Solutions | All rights reserved 2026</p>
+</footer>
+
+</body>
+</html>

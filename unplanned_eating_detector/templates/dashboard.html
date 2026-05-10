@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- WELCOME SECTION -->
+<div class="card">
+    <h2>Welcome</h2>
+
+    <p style="font-size:15px; color:#444;">
+        This system helps you understand your daily eating habits. By recording your food intake,
+        you can identify patterns and reduce unplanned snacking over time.
+    </p>
+
+    <p style="font-size:15px; color:#444;">
+        The system also analyzes your data and provides a risk level based on your behavior.
+        You may receive alerts before common snack times to help you stay aware.
+    </p>
+</div>
+
+<!-- QUICK ACTION GRID -->
+<div class="card">
+
+    <h3>Quick Actions</h3>
+
+    <div class="grid">
+
+        <a href="/add_food" class="grid-btn">
+            <span class="icon">➕</span>
+            <span>Add Food</span>
+        </a>
+
+        <a href="/history" class="grid-btn">
+            <span class="icon">📊</span>
+            <span>History</span>
+        </a>
+
+        <a href="/risk" class="grid-btn">
+            <span class="icon">⚠</span>
+            <span>Risk Analysis</span>
+        </a>
+
+        <a href="/toggle_alert" class="grid-btn">
+            <span class="icon">🔔</span>
+            <span>Alerts</span>
+        </a>
+
+    </div>
+
+</div>
+
+<!-- SYSTEM INFO -->
+<div class="card">
+
+    <h3>System Features</h3>
+
+    <ul style="font-size:14px; line-height:1.7;">
+        <li>Track daily food intake with time and type</li>
+        <li>Mark snacks as planned or unplanned</li>
+        <li>Add notes for mood and activity</li>
+        <li>View eating trends and history</li>
+        <li>Receive alerts before risky snack times</li>
+        <li>Analyze behavior using machine learning</li>
+    </ul>
+
+</div>
+
+{% endblock %}

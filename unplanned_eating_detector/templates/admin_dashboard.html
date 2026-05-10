@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+
+    <h2>Admin Dashboard</h2>
+
+    <p style="font-size:14px; color:#555;">
+        This dashboard provides an overview of user eating patterns, alert activity,
+        and common risky time periods. You can also publish guidance messages to users.
+    </p>
+
+</div>
+
+<!-- SUMMARY SECTION -->
+<div class="card">
+
+    <h3>System Summary</h3>
+
+    <ul style="font-size:14px; line-height:1.8;">
+        <li>Total Food Records: <strong>{{ data.total_records }}</strong></li>
+        <li>Unplanned Snacks: <strong>{{ data.unplanned_snacks }}</strong></li>
+        <li>Alerts Triggered: <strong>{{ data.alerts_triggered }}</strong></li>
+    </ul>
+
+</div>
+
+<!-- RISK WINDOWS -->
+<div class="card">
+
+    <h3>Common Risky Time Windows</h3>
+
+    {% if windows and windows|length > 0 %}
+
+        <table style="width:100%; border-collapse: collapse;">
+
+            <thead>
+                <tr style="background-color:#2563eb; color:white;">
+                    <th style="padding:10px;">Start Time</th>
+                    <th>End Time</th>
+                    <th>Risk Level</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for w in windows %}
+                <tr style="text-align:center; border-bottom:1px solid #ddd;">
+                    <td style="padding:10px;">{{ w.start }}</td>
+                    <td>{{ w.end }}</td>
+                    <td>{{ w.risk_level }}</td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    {% else %}
+
+        <p style="font-size:14px;">No risk windows identified yet.</p>
+
+    {% endif %}
+
+</div>
+
+<!-- ALERT COUNT -->
+<div class="card">
+
+    <h3>Alert Activity</h3>
+
+    <p style="font-size:14px;">
+        Total alerts generated in recent period:
+        <strong>{{ alerts }}</strong>
+    </p>
+
+</div>
+
+<!-- PUBLISH MESSAGE -->
+<div class="card">
+
+    <h3>Publish Guidance Message</h3>
+
+    <p style="font-size:14px; color:#555;">
+        Share a simple message to guide users toward better eating habits.
+    </p>
+
+    <form method="POST" action="/admin/publish">
+
+        <textarea name="message" rows="3" placeholder="Enter guidance message..." required></textarea>
+
+        <button type="submit" class="btn">Publish Message</button>
+
+    </form>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+    <h2>Eating History</h2>
+
+    <p class="form-desc">
+        Review your food records and identify patterns in your eating behavior.
+    </p>
+</div>
+
+<div class="card">
+
+    {% if records %}
+
+    <div class="table-container">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Food</th>
+                    <th>Time</th>
+                    <th>Type</th>
+                    <th>Planned</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for record in records %}
+                <tr>
+                    <td>{{ record.item }}</td>
+                    <td>{{ record.time.strftime("%Y-%m-%d %H:%M") }}</td>
+                    <td>{{ record.snack_type }}</td>
+                    <td>
+                        {% if record.planned %}
+                            ✔ Planned
+                        {% else %}
+                            ⚠ Unplanned
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a href="/delete/{{ record.id }}" class="btn danger-btn">
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+
+    </div>
+
+    {% else %}
+
+    <p>No records found.</p>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

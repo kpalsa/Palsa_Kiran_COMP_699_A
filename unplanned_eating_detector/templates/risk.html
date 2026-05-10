@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+
+    <h2>Risk Analysis</h2>
+
+    <p class="form-desc">
+        This section shows your eating behavior analysis using machine learning.
+    </p>
+
+</div>
+
+{% if result %}
+
+<div class="card highlight-card">
+
+    <h3>Risk Score</h3>
+    <p class="big-text">{{ result.score | round(2) }}</p>
+
+</div>
+
+<div class="card">
+
+    <h3>Risk Level</h3>
+
+    {% if result.label == "High Risk" %}
+        <p class="risk high">High Risk</p>
+    {% elif result.label == "Medium Risk" %}
+        <p class="risk medium">Medium Risk</p>
+    {% else %}
+        <p class="risk low">Low Risk</p>
+    {% endif %}
+
+</div>
+
+<div class="card">
+
+    <h3>Explanation</h3>
+    <p>{{ result.explanation }}</p>
+
+</div>
+
+{% else %}
+
+<div class="card">
+    <p>No data available. Add records first.</p>
+</div>
+
+{% endif %}
+
+{% endblock %}

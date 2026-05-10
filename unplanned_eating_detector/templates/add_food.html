@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card form-card">
+
+    <h2>Add Food Record</h2>
+
+    <p class="form-desc">
+        Enter your food details. This helps the system analyze your eating patterns
+        and provide accurate insights.
+    </p>
+
+    <form method="POST" action="/add_food">
+
+        <div class="form-group">
+            <label>Food Item</label>
+            <input type="text" name="item" placeholder="Enter food name" required>
+        </div>
+
+        <div class="form-group">
+            <label>Time of Consumption</label>
+            <input type="datetime-local" name="time" required>
+        </div>
+
+        <div class="form-group">
+            <label>Snack Type</label>
+            <select name="type" required>
+                <option value="">Select type</option>
+                <option value="Healthy">Healthy</option>
+                <option value="Junk">Junk</option>
+                <option value="Beverage">Beverage</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Was this planned?</label>
+            <select name="planned" required>
+                <option value="">Select option</option>
+                <option value="yes">Planned</option>
+                <option value="no">Unplanned</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Mood (optional)</label>
+            <input type="text" name="mood" placeholder="Example: stressed, relaxed">
+        </div>
+
+        <div class="form-group">
+            <label>Activity (optional)</label>
+            <input type="text" name="activity" placeholder="Example: watching TV">
+        </div>
+
+        <button type="submit" class="btn full-btn">
+            ➕ Save Record
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}
