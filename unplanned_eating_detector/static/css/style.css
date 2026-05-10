@@ -1,0 +1,288 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(to right, #f4f6f9, #eef2f7);
+    color: #333;
+}
+
+/* =========================
+   HEADER
+========================= */
+.main-header {
+    background: linear-gradient(to right, #1e3a8a, #2563eb);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 28px;
+    letter-spacing: 0.5px;
+}
+
+.tagline {
+    font-size: 14px;
+    margin-top: 6px;
+    color: #dbeafe;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.navbar a {
+    display: inline-block;
+    margin: 6px;
+    padding: 8px 16px;
+    background-color: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+    padding: 25px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* =========================
+   CARD DESIGN
+========================= */
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+/* =========================
+   HEADINGS
+========================= */
+h2, h3 {
+    margin-top: 0;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn {
+    display: inline-block;
+    background: linear-gradient(to right, #2563eb, #1d4ed8);
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: linear-gradient(to right, #1d4ed8, #1e40af);
+    transform: scale(1.02);
+}
+
+/* =========================
+   FORM INPUTS
+========================= */
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #2563eb;
+    outline: none;
+}
+
+/* =========================
+   TABLE STYLE
+========================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 10px;
+    background-color: #2563eb;
+    color: white;
+}
+
+td {
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+/* =========================
+   SCROLL (FOR LONG CONTENT)
+========================= */
+.container {
+    overflow-y: auto;
+    padding-bottom: 80px; /* prevents footer overlap */
+}
+
+/* =========================
+   FOOTER (IMPROVED)
+========================= */
+.footer {
+    background-color: #111827;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    width: 100%;
+    font-size: 13px;
+    position: relative; /* FIXED removed (better UX) */
+}
+
+/* =========================
+   SMALL DEVICES
+========================= */
+@media (max-width: 600px) {
+
+    .navbar a {
+        display: block;
+        margin: 5px auto;
+        width: 80%;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+}
+/* =========================
+   GRID DASHBOARD
+========================= */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* GRID BUTTON */
+.grid-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #2563eb, #1d4ed8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.grid-btn:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(to right, #1d4ed8, #1e40af);
+}
+
+/* ICON STYLE */
+.icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+/* FORM IMPROVEMENTS */
+.form-card {
+    max-width: 600px;
+    margin: auto;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-desc {
+    font-size: 14px;
+    color: #555;
+}
+
+.full-btn {
+    width: 100%;
+}
+
+/* TABLE IMPROVEMENT */
+.table-container {
+    overflow-x: auto;
+}
+
+/* DELETE BUTTON */
+.danger-btn {
+    background-color: #dc2626;
+}
+
+.danger-btn:hover {
+    background-color: #b91c1c;
+}
+
+/* RISK STYLING */
+.highlight-card {
+    text-align: center;
+}
+
+.big-text {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.risk {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.risk.high {
+    color: #dc2626;
+}
+
+.risk.medium {
+    color: #f59e0b;
+}
+
+.risk.low {
+    color: #16a34a;
+}
